@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SCC Prayer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css" >
+    
+    </head>
+<body>
+
+    <nav class="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">SCC Prayer</a>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about1.html" class="nav-item">About Us</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <main class="container">
+        <header class="dashboard-header">
+            <div>
+                <h1>Prayer Dashboard</h1>
+                <p style="color: var(--text-muted);">Manage requests and oversee the prayer wall.</p>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Pending Review</div>
+                <div class="stat-number" style="color: var(--text-pending);">3</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Active on Wall</div>
+                <div class="stat-number" style="color: var(--text-active);">12</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total This Month</div>
+                <div class="stat-number">45</div>
+            </div>
+        </section>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('pending')">Pending Approval</button>
+            <button class="tab-btn" onclick="switchTab('active')">Active Wall</button>
+            <button class="tab-btn" onclick="switchTab('archived')">Archived</button>
+        </div>
+
+        <div id="pending-view" class="view-section">
+            
+            <div class="request-card" id="req-101">
+                <div class="card-header">
+                    <div class="meta-info">
+                        <h3>John Doe</h3>
+                        <div class="meta-date">Submitted 30 mins ago</div>
+                    </div>
+                    <span class="status-badge badge-pending">Needs Review</span>
+                </div>
+                <div class="prayer-text">
+                    "My mother has been hospitalized with pneumonia. We are asking for prayers for her breathing to stabilize and for the doctors to have wisdom."
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-reject" onclick="archiveRequest('req-101')">Reject / Archive</button>
+                    <button class="btn btn-approve" onclick="approveRequest('req-101')">Approve to Wall</button>
+                </div>
+            </div>
+
+            <div class="request-card" id="req-102">
+                <div class="card-header">
+                    <div class="meta-info">
+                        <h3>Anonymous</h3>
+                        <div class="meta-date">Submitted 2 hours ago</div>
+                    </div>
+                    <span class="status-badge badge-pending">Needs Review</span>
+                </div>
+                <div class="prayer-text">
+                    "Please pray for my marriage. We are going through a very rough patch and I feel like giving up. I need God's strength."
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-reject" onclick="archiveRequest('req-102')">Reject / Archive</button>
+                    <button class="btn btn-approve" onclick="approveRequest('req-102')">Approve to Wall</button>
+                </div>
+            </div>
+
+             <div class="request-card" id="req-103">
+                <div class="card-header">
+                    <div class="meta-info">
+                        <h3>Anonymous (Private)</h3>
+                        <div class="meta-date">Submitted 4 hours ago</div>
+                    </div>
+                    <span class="status-badge badge-pending" style="background:#E5E7EB; color:#374151;">Private Request</span>
+                </div>
+                <div class="prayer-text">
+                    "I am struggling with addiction again. Please pray for me. I don't want this on the wall, just for the staff to know."
+                </div>
+                <div class="card-actions">
+                    <div style="margin-right: auto; font-size: 0.85rem; color: var(--text-muted); align-self: center;">
+                        <em>Private requests are not posted to wall.</em>
+                    </div>
+                    <button class="btn btn-archive" onclick="archiveRequest('req-103')">Mark as Read & Archive</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="active-view" class="view-section hidden">
+            
+            <div class="request-card" id="req-201">
+                <div class="card-header">
+                    <div class="meta-info">
+                        <h3>Sarah M.</h3>
+                        <div class="meta-date">Posted 5 hours ago</div>
+                    </div>
+                    <span class="status-badge badge-active">Live</span>
+                </div>
+                <div class="prayer-text">
+                    "Please pray for my father's surgery tomorrow. Asking for the surgeon's hands to be guided and for a quick recovery."
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-archive" onclick="archiveRequest('req-201')">Remove from Wall</button>
+                </div>
+            </div>
+
+            <div class="request-card" id="req-202">
+                <div class="card-header">
+                    <div class="meta-info">
+                        <h3>The Thompson Family</h3>
+                        <div class="meta-date">Posted Yesterday</div>
+                    </div>
+                    <span class="status-badge badge-active">Live</span>
+                </div>
+                <div class="prayer-text">
+                    "We are praising God for a safe delivery of our baby girl! Thank you SCC for the prayers."
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-archive" onclick="archiveRequest('req-202')">Remove from Wall</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="archived-view" class="view-section hidden">
+            <div class="empty-state">
+                <p>No recently archived items.</p>
+            </div>
+        </div>
+
+    </main>
+
+    
+    <script src="script.js" ></script>
+</body>
+</html>

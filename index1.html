@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCC Prayer | Share & Intercede</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">SCC Prayer</a>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about1.html" class="nav-item">About Us</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Cast all your anxiety on Him</h1>
+            <p class="hero-subtitle">A quiet space for the SCC community to share burdens and lift one another up in prayer.</p>
+            <a href="#request" class="btn btn-primary">Submit a Request</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="request" class="section-spacer">
+            <div class="container">
+                <div class="form-card">
+                    <div class="form-header">
+                        <h2>Submit a Prayer Request</h2>
+                        <p class="text-muted">Your privacy is our priority.</p>
+                    </div>
+
+                    <div id="successMessage" class="alert alert-success" style="display:none;">
+                        Your prayer request has been received.
+                    </div>
+
+                    <form id="prayerForm">
+                        <div class="form-group">
+                            <label for="prayerContent">How can we pray for you?</label>
+                            <textarea id="prayerContent" class="form-control" placeholder="Share as much or as little as you feel comfortable..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Your Name (Optional)</label>
+                            <input type="text" id="name" class="form-control" placeholder="Leave blank for Anonymous">
+                        </div>
+
+                        <div class="form-group checkbox-wrapper">
+                            <input type="checkbox" id="privateCheck">
+                            <label for="privateCheck" class="label-inline">Keep this private (Do not post to Wall)</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-block">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="wall" class="section-spacer bg-light">
+            <div class="container">
+                <div class="wall-header">
+                    <h2>Community Prayer Wall</h2>
+                    <p class="text-muted">Join us in interceding for these requests.</p>
+                </div>
+
+                <div class="prayer-grid" id="prayerGrid">
+                    <article class="prayer-card">
+                        <div class="prayer-meta">
+                            <span class="author">Anonymous</span>
+                            <span class="timestamp">2 hrs ago</span>
+                        </div>
+                        <div class="prayer-body">
+                            "Praying for peace and guidance in a difficult career decision coming up this week."
+                        </div>
+                    </article>
+
+                    <article class="prayer-card">
+                        <div class="prayer-meta">
+                            <span class="author">Sarah M.</span>
+                            <span class="timestamp">5 hrs ago</span>
+                        </div>
+                        <div class="prayer-body">
+                            "Please pray for my father's surgery tomorrow. Asking for the surgeon's hands to be guided and for a quick recovery."
+                        </div>
+                    </article>
+
+                    <article class="prayer-card">
+                        <div class="prayer-meta">
+                            <span class="author">The Thompson Family</span>
+                            <span class="timestamp">Yesterday</span>
+                        </div>
+                        <div class="prayer-body">
+                            "We are praising God for a safe delivery of our baby girl! Thank you SCC for the prayers."
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 SCC Community. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <span class="separator">&bull;</span>
+                <a href="#">Community Guidelines</a>
+            </nav>
+        </div>
+    </footer>
+
+    
+    <script src="script.js" ></script>
+</body>
+</html>
